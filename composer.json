@@ -1,0 +1,47 @@
+{
+  "name": "ekandreas/oslo",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordCamp Oslo - Andreas Ek",
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "composer/installers": "*",
+    "vlucas/phpdotenv": "*",
+    "johnpbloch/wordpress": "*",
+    "oscarotero/env": "*",
+    "roots/wp-password-bcrypt": "*",
+    "wpackagist-plugin/autodescription": "*",
+    "wpackagist-plugin/simple-history": "*",
+    "wpackagist-plugin/amp": "*",
+    "philo/laravel-blade": "*",
+    "wpackagist-plugin/woocommerce": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}
