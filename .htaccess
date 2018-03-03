@@ -1,4 +1,0 @@
-RewriteEngine on
-RewriteBase /
-RewriteCond %{REQUEST_URI} !^/current/web/
-RewriteRule ^(.*)$ /current/web/$1 [L]
