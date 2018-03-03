@@ -26,7 +26,8 @@
     "wpackagist-plugin/woocommerce": "*"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "*"
+    "squizlabs/php_codesniffer": "*",
+    "deployer/deployer": "*"
   },
   "extra": {
     "installer-paths": {
